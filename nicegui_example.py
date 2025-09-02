@@ -123,6 +123,9 @@ def create_main_interface():
             # 结果显示区域
             result_area = ui.textarea('结果将在这里显示...').classes('w-full').style('min-height: 200px')
 
-if __name__ == '__main__':
-    create_main_interface()
+# 直接调用，不需要 main guard
+create_main_interface()
+
+# 启动服务器
+if __name__ in {"__main__", "__mp_main__"}:
     ui.run(port=8080, title='同义词替换工具')
